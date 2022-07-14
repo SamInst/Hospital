@@ -36,10 +36,8 @@ public class Doctors {
     }
 
     public void PrescribeMeds(){
-
-        System.out.print("The Doctor "+ getDoctorName() + ", specialist in " + getSpecialization() + ", Located in "+getLocation()+"" +
-                ", attended the patient ");
-
+        System.out.print("Doctor "+ getDoctorName() + ", specialist in " +
+        getSpecialization() + ", Locate: "+getLocation());
     }
     public void CheckReports(){}
     public void PrescribeTest(){}

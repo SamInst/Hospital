@@ -6,28 +6,50 @@ public class Receptionist {
     public int receptionId;
     public String receptionName;
 
-    public void CheckRoomAvailability(){}
-    public void BookRoom(){}
-    public void GenerateInvoice(){}
-    public static void MaintainPatientDetails(){
-        System.out.println("describe the Patient problems: ");
-        Scanner sc1 = new Scanner(System.in);
-        String report = sc1.nextLine();
-    }
-    public void MaintainPatientDetailsReport(){
-        MaintainPatientDetails();
-    }
-    public void DrawWage(){}
+    public String report;
 
-    public Receptionist(int receptionId, String receptionName) {
+    public void CheckRoomAvailability(){}
+    public void BookRoom(){
+        System.out.println("# Receptionist Registration #\n Name: " );
+        Scanner name = new Scanner(System.in);
+        String name1 = name.nextLine();
+        int countID = 100;
+        countID += 1;
+        System.out.println("Receptionist: " + name1 + ", ID: "+countID);
+    }
+    public void GenerateInvoice(){
+
+
+    }
+    public void MaintainPatientDetails(){
+        System.out.println("describe the Patient problems: ");
+        Receptionist receptionist = new Receptionist();
+        receptionist.getReport();
+    }
+    public void DrawWage(){
+
+    }
+
+    public Receptionist() {
         this.receptionId = receptionId;
         this.receptionName = receptionName;
     }
 
+    public Receptionist(String report) {
+        this.report = report;
+    }
+
     @Override
     public String toString() {
-        return "ReceptionId: " + receptionId + "\n"+
-               "ReceptionName: " + receptionName ;
+        return report;
+    }
+
+    public String getReport() {
+        return report;
+    }
+
+    public void setReport(String report) {
+        this.report = report;
     }
 
     public int getReceptionId() {

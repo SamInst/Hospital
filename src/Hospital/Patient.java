@@ -1,48 +1,85 @@
 package Hospital;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Patient {
-    private int patientId;
-    private String patientName;
-    private int patientPhoneNumber;
-    private String address;
-    private int age;
-    private String sex;
+    public void RegisterPatient(){
+        int countID = 0;
+        countID += 1;
+        System.out.println("Patient name: ");
+        Scanner sc = new Scanner(System.in);
+        String patientName = sc.nextLine();
+        System.out.println("");
 
-    private int roomNo;
+        System.out.println("Phone Number: ");
+        Scanner sc1 = new Scanner(System.in);
+        String patientNumber = sc1.nextLine();
 
-    public Patient(int patientId, String patientName, int patientPhoneNumber, String address, int age, String sex, int roomNo) {
-        this.patientId = patientId;
-        this.patientName = patientName;
-        this.patientPhoneNumber = patientPhoneNumber;
-        this.address = address;
-        this.age = age;
-        this.sex = sex;
-        this.roomNo = roomNo;
+        System.out.println("Address: ");
+        Scanner sc2 = new Scanner(System.in);
+        String patientAddress = sc2.nextLine();
+
+        System.out.println("Age: ");
+        Scanner sc3 = new Scanner(System.in);
+        String patientAge = sc3.nextLine();
+
+        System.out.println("Sex: ");
+        Scanner sc4 = new Scanner(System.in);
+        String patientSex = sc4.nextLine();
+
+        System.out.println("Room No: ");
+        Scanner sc5 = new Scanner(System.in);
+        String patientRoom = sc.nextLine();
+
+
+
+        System.out.println("Health insurances: ");
+        HealthInsurances hi = new HealthInsurances("PhillCare");
+        HealthInsurances hi2 = new HealthInsurances("Manulife");
+        HealthInsurances hi3 = new HealthInsurances("Medicash");
+        HealthInsurances hi4 = new HealthInsurances("PhilHealth");
+        List<HealthInsurances> healthInsurances = new ArrayList<>();
+        healthInsurances.add(hi);
+        healthInsurances.add(hi2);
+        healthInsurances.add(hi3);
+        healthInsurances.add(hi4);
+        System.out.println(healthInsurances);
+        System.out.println("----------------");
+
+        
+
     }
 
-    @Override
-    public String toString() {
-        return  "patientId=" + patientId + "\n" +
-                "patientName='" + patientName + "\n" +
-                "patientPhoneNumber=" + patientPhoneNumber + "\n" +
-                "Address='" + address + "\n" +
-                "Age=" + age + "\n" +
-                "Sex='" + sex + "\n" +
-                "RoomNo=" + roomNo;
-    }
+    public void PatientPayment() throws InterruptedException {
+        System.out.println(
+                "# Payment Type #" +
+                "(1)Especial" +
+                "(2)Health insurance");
+        Scanner pay = new Scanner(System.in);
+        int pay1 = pay.nextInt();
+        switch (pay1) {
+            case 1 -> {
+        System.out.println("""
+                Selected Especial...
+                Select the form of payment...
+                (1) Money
+                (2) Credit Card""");
 
-    public int getPatientId() {return patientId;}
-    public void setPatientId(int patientId) {this.patientId = patientId;}
-    public String getPatientName() {return patientName;}
-    public void setPatientName(String patientName) {this.patientName = patientName;}
-    public int getPatientPhoneNumber() {return patientPhoneNumber;}
-    public void setPatientPhoneNumber(int patientPhoneNumber) {this.patientPhoneNumber = patientPhoneNumber;}
-    public String getAddress() {return address;}
-    public void setAddress(String address) {this.address = address;}
-    public int getAge() {return age;}
-    public void setAge(int age) {this.age = age;}
-    public String getSex() {return sex;}
-    public void setSex(String sex) {this.sex = sex;}
-    public int getRoomNo() {return roomNo;}
-    public void setRoomNo(int roomNo) {this.roomNo = roomNo;}
+        Scanner pay2 = new Scanner(System.in);
+        int pay3 = pay2.nextInt();
+        switch (pay3) {
+            case 1 -> {
+                System.out.println("Selected Money... ");}
+            case 2 -> {System.out.println(" Selected Credit Card...");}
+        }
+    }
+        case 2 ->{
+            System.out.println("Waiting the Token...");
+            wait(3000);
+            System.out.println("Payment done!");
+            }
+        }
+    }
 }
