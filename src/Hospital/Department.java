@@ -10,7 +10,6 @@ public class Department {
         this.nameDept = nameDept;
         this.docId = docId;
     }
-
     public int getIdDept() {return idDept;}
     public void setIdDept(int idDept) {this.idDept = idDept;}
     public String getNameDept() {return nameDept;}

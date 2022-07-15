@@ -2,38 +2,48 @@ package Hospital;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.Scanner;
 public class RunHospital {
-    public static void main(String[] args) {
-        Patient patient = new Patient();
+    public static void main(String[] args) throws InterruptedException {
+        Payment py = new Payment();
         Receptionist receptionist = new Receptionist();
-//        receptionist.BookRoom(); // Registration of Receptionist
-//        patient.RegisterPatient(); // Registration of Patient
+        Patient patient = new Patient();
+        Hospital hp = new Hospital();
+        int abc;
+        int st1;
 
-        //
+//      receptionist.BookRoom(); // Registration of Receptionist (colocar o recepcionista que resgistrou o paciente na "nota fiscal" )
 
         //Registration of Doctors
-        Doctors doctor01 = new Doctors(001, "Sam Helson", 123456789, "Pediatrician", "São Luís");
-        Doctors doctor03 = new Doctors(003, "Sam Helson 03", 100000000, "Pediatrician", "São Luís");
-        Doctors doctor04 = new Doctors(004, "Sam Helson 04", 199999999, "Pediatrician", "São Luís");
-        Doctors doctor02 = new Doctors(002, "Sam 2", 123456789, "gynecologist", "São Paulo");
 
-        List<Doctors>doctorsList=new ArrayList<>();
-        doctorsList.add(doctor01);
-        doctorsList.add(doctor02);
-        doctorsList.add(doctor03);
-        doctorsList.add(doctor04);
-//        doctorsList.forEach(doctor-> System.out.println(doctor) );
-        doctorsList.get(1);
+//      doctorsList.forEach(doctor-> System.out.println(doctor) );
 
 
+//      patient.RegisterPatient(); // Registration of Patient
+
+        System.out.println("""
+                 # Service Type # 
+                 (1) Especial 
+                 (2) Health insurance
+                 (0) Cancel...
+                """);
+        Scanner St = new Scanner(System.in);
+        st1 = St.nextInt();
+        switch (st1) {
+
+            case 1 -> {
+                hp.Something();
+
+
+            }
+            case 2 -> {hp.Something();
+
+            }
 
 
 //        System.out.println(doctor01);
 //        doctor01.PrescribeMeds();
-        //Registration of Patients
-
-
+                // Registration of Patients
 
 
 //        System.out.println(", reports the following problems: ");
@@ -41,5 +51,8 @@ public class RunHospital {
 //        System.out.print("# " + report + " #");
 
 
+
+        }
     }
 }
+

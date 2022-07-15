@@ -6,14 +6,24 @@ public class Doctors {
     private long phoneNo;
     private String specialization;
     private String location;
+    private float priceQuerry;
 
-    public Doctors(int doctorId, String name, long phoneNo, String specialization, String location) {
+    public Doctors(int doctorId, String name, long phoneNo, String specialization, String location, float priceQuerry) {
         this.doctorId = doctorId;
         this.doctorName = name;
         this.phoneNo = phoneNo;
         this.specialization = specialization;
         this.location = location;
+        this.priceQuerry = priceQuerry;
     }
+
+    public Doctors() {
+
+    }
+
+    public void setPhoneNo(long phoneNo) {this.phoneNo = phoneNo;}
+    public float getPriceQuerry() {return priceQuerry;}
+    public void setPriceQuerry(float priceQuerry) {this.priceQuerry = priceQuerry;}
     public int getDoctorId() {return doctorId;}
     public void setDoctorId(int doctorId) {this.doctorId = doctorId;}
     public String getDoctorName() {return doctorName;}
@@ -32,9 +42,9 @@ public class Doctors {
                 "Name: " + doctorName + "\n" +
                 "PhoneNo: " + phoneNo + "\n" +
                 "Specialization: " + specialization + "\n" +
-                "location: " + location;
+                "location: " + location + "\n" +
+                "Price Querry: " + priceQuerry;
     }
-
     public void PrescribeMeds(){
         System.out.print("Doctor "+ getDoctorName() + ", specialist in " +
         getSpecialization() + ", Locate: "+getLocation());
